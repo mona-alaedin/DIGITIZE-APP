@@ -53,24 +53,21 @@
       <span class="text-sm text-slate-800 mr-2">فیلتر : برند اپل</span>
     </div>
   </div>
-
-
-
-  <!-- desktop -->
+  <!-- desktop navbar -->
+  <!-- desktop content-->
   <div class="m-4 grid md:gap-8 grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)_100px]">
 
 
     <!-- side bar -->
     <div class="col-span-4 lg:col-span-3 row-span-2 hidden md:block">
-
       <div class="bg-white rounded-xl shadow-sm p-8">
         <!-- categories -->
-        <div class="">
+        <div class="mb-7">
           <p class="text-orange-500 font-bold text-lg mb-7">دسته بندی</p>
-          <ul class="mb-7">
-            <li class=" text-slate-800 mb-2">
+          <ul class="border-b">
+            <li class="mb-4">
               <a href="" class="flex relative py-2">
-                <span class="bg-slate-100 rounded-full h-7 w-7 absolute top-0 -right-1.5 z-0">
+                <span class="bg-slate-200 rounded-full h-7 w-7 absolute top-0 -right-1.5 z-0">
                 </span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="size-7 z-10 stroke-slate-600">
@@ -80,9 +77,9 @@
                 <p class="text-lg text-slate-800 mr-2">تلفن همراه</p>
               </a>
             </li>
-            <li class=" text-slate-800 mb-2">
+            <li class="mb-4">
               <a href="#" class="flex relative py-2">
-                <span class="bg-slate-50 rounded-full h-7 w-7 absolute top-0 -right-1.5 z-0"></span>
+                <span class="bg-slate-100 rounded-full h-7 w-7 absolute top-0 -right-1.5 z-0"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="size-7 z-10 stroke-slate-200">
                   <path stroke-linecap="round" stroke-linejoin="round"
@@ -91,9 +88,9 @@
                 <p class="text-lg text-slate-200 mr-2">لپ تاپ</p>
               </a>
             </li>
-            <li class=" text-slate-800 mb-2">
+            <li class="mb-4">
               <a href="#" class="flex relative py-2">
-                <span class="bg-slate-50 rounded-full h-7 w-7 absolute top-0 -right-1.5 z-0"></span>
+                <span class="bg-slate-100 rounded-full h-7 w-7 absolute top-0 -right-1.5 z-0"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="size-7 z-10 stroke-slate-200">
                   <path stroke-linecap="round" stroke-linejoin="round"
@@ -104,136 +101,137 @@
             </li>
           </ul>
         </div>
-
-
         <!-- desktop filters -->
-        <!-- <div class="mt-6 w-full">
-          <p class="text-red-400 font-bold text-lg pb-5 ">فیلتر</p>
-
-          <div class="">
-
-            <div class="py-5 w-full flex items-center justify-between ">
-              <button class="flex justify-between py-1 relative">
-                <span class="bg-slate-100 rounded-full h-7 w-7 absolute -top-1.5 -right-1.5 z-0"></span>
+        <div>
+          <p class="text-orange-500 font-bold text-lg mb-7">فیلتر</p>
+          <!-- ACC NO-1 -->
+          <div class="" x-data="{ isOpenBrand: false }">
+            <!-- acc header -->
+            <button @click="isOpenBrand = !isOpenBrand" class="mb-4 py-4 flex justify-between w-full text-slate-800 ">
+              <div class="flex relative">
+                <span class="bg-slate-200 rounded-full h-7 w-7 absolute -top-2 -right-1.5 z-0"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="size-7 z-10 stroke-slate-600">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-                <p class="text-lg text-slate-800 mr-2">برند محصول</p>
-              </button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-6 stroke-slate-800">
+                <span class="text-lg mr-2">برند محصول</span>
+              </div>
+              <svg :class="isOpenBrand ? 'rotate-180':''" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 transition-all duration-300">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
 
+            </button>
+            <!-- acc content -->
+            <div x-show="isOpenBrand" class="flex flex-col gap-y-4 ">
+              <label for="apple" class="block">
+                <input type="checkbox" id="apple"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">اپل</span>
+              </label>
+              <label for="samsung" class="block">
+                <input type="checkbox" id="samsung"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">سامسونگ</span>
+              </label>
+              <label for="xiaomi" class="block">
+                <input type="checkbox" id="xiaomi"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">شیائومی</span>
+              </label>
+              <label for="huawei" class="block">
+                <input type="checkbox" id="huawei"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">هواوی</span>
+              </label>
             </div>
 
-            <div class="hidden">
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">اپل</label>
-              </div>
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">سامسونگ</label>
-              </div>
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">شیائومی</label>
-              </div>
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">هواوی</label>
-              </div>
-            </div>
           </div>
-
-          <div class="">
-
-            <div class="py-5 w-full flex items-center justify-between ">
-              <button class="flex justify-between py-1 relative">
-                <span class="bg-slate-100 rounded-full h-7 w-7 absolute -top-1.5 -right-1.5 z-0"></span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="size-7 z-10 stroke-slate-600">
-                  <path stroke-linecap="round" stroke-linejoin="round"
+          <!-- ACC NO-2 -->
+          <div class="" x-data="{ isOpenColor: false }">
+            <!-- acc header -->
+            <button @click="isOpenColor = !isOpenColor" class="mb-4 py-4 flex justify-between w-full text-slate-800 ">
+              <div class="flex relative">
+                <span class="bg-slate-200 rounded-full h-7 w-7 absolute -top-2 -right-1.5 z-0"></span>
+                <svg class="size-7 z-10 stroke-slate-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round"
                     d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z" />
                 </svg>
-
-                <p class="text-lg text-slate-800 mr-2">رنگ محصول</p>
-              </button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-6 stroke-slate-800">
+                <span class="text-lg mr-2">رنگ محصول</span>
+              </div>
+              <svg :class="isOpenBrand ? 'rotate-180':''" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 transition-all duration-300">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
 
+            </button>
+            <!-- acc content -->
+            <div x-show="isOpenColor" class="flex flex-col gap-y-4 ">
+              <label for="red" class="block">
+                <input type="checkbox" id="red"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">قرمز</span>
+              </label>
+              <label for="yellow" class="block">
+                <input type="checkbox" id="yellow"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">زرد</span>
+              </label>
+              <label for="green" class="block">
+                <input type="checkbox" id="green"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">سبز</span>
+              </label>
+              <label for="blue" class="block">
+                <input type="checkbox" id="blue"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">آبی</span>
+              </label>
+              <label for="black" class="block">
+                <input type="checkbox" id="black"
+                  class="form-checkbox mr-4 focus:ring-0 text-red-300 border border-slate-800 focus:border-0 focus:ring-offset-0 focus:outline-none rounded-sm">
+                <span class="mr-2">مشکی</span>
+              </label>
             </div>
-
-            <div class="hidden">
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">مشکی</label>
-              </div>
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">سورمه ای</label>
-              </div>
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">طوسی</label>
-              </div>
-              <div class="flex items-center mb-5">
-                <input type="checkbox" id="apple"
-                  class="focus:border-orange-500 rounded text-orange-300 focus:ring-0 focus:ring-offset-0">
-                <label for="apple" class="mr-3 text-slate-800">سفید</label>
-              </div>
-            </div>
-
 
           </div>
-
-          <div class="">
-
-            <div class="py-5 w-full flex items-center justify-between ">
-              <button class="flex justify-between py-1 relative">
-                <span class="bg-slate-100 rounded-full h-7 w-7 absolute -top-1.5 -right-1.5 z-0"></span>
+          <!-- ACC NO-3 -->
+          <div class="" x-data="{ isOpenPrice: fal }">
+            <!-- acc header -->
+            <button @click="isOpenPrice = !isOpenPrice" class="mb-4 py-4 flex justify-between w-full text-slate-800">
+              <div class="flex relative">
+                <span class="bg-slate-200 rounded-full h-7 w-7 absolute -top-2 -right-1.5 z-0"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="size-7 z-10 stroke-slate-600">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
                 </svg>
-
-                <p class="text-lg text-slate-800 mr-2">محدوده قیمت</p>
-              </button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-6 stroke-slate-800">
+                <span class="text-lg mr-2">محدوده قیمت</span>
+              </div>
+              <svg :class="isOpenBrand ? 'rotate-180':''" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 transition-all duration-300">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
 
-            </div>
-
-            <div class="">
-              <div class="flex items-center mb-5">
-                <input type="range" value="0" min="0" max="50000000"
-                  class="[&::-webkit-slider-thumb]:!bg-lime-500 w-full h-2 outline-none accent-orange-500">
+            </button>
+            <!-- acc content -->
+            <div x-show="isOpenPrice" class="flex flex-col gap-y-4 ">
+              <label for="apple" class="block">
+                <input type="range" id="apple" class="w-full">
+              </label>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-gray-600">2.000.000</span>
+                <span class="text-xs text-gray-600">50.000.000</span>
               </div>
             </div>
 
-
           </div>
+        </div>
 
-        </div> -->
       </div>
-
     </div>
-
 
     <!-- sort sections -->
     <div class="col-span-8 lg:col-span-9 hidden md:block">
@@ -299,7 +297,7 @@
               <span x-text="product.brand" class="text-slate-400 text-sm md:text-base">اپل</span>
               <div x-data="{ color: 'black' }" class="flex justify-center items-center">
                 <div @click="color = 'yellow'" :class="color=== 'yellow'? 'ring-2 ring-yellow-500' :''"
-                  class="flex justify-center items-center w-5 h-5 bg-yellow-400 rounded-full border-2 border-white">
+                  class="flex justify-center items-center w-5 h-5 bg-yellow-400 rounded-full border border-white">
                   <svg x-show="color ==='yellow'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
@@ -307,21 +305,21 @@
 
                 </div>
                 <div @click="color = 'red'" :class="color=== 'red'? 'ring-2 ring-red-700' :''"
-                  class="flex justify-center items-center w-5 h-5 -mr-1.5 bg-red-600 rounded-full border-2 border-white cursor-pointer">
+                  class="flex justify-center items-center w-5 h-5 -mr-1.5 bg-red-600 rounded-full border border-white cursor-pointer">
                   <svg x-show="color ==='red'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                   </svg>
                 </div>
                 <div @click="color = 'gray'" :class="color=== 'gray'? 'ring-2 ring-gray-700' :''"
-                  class="flex justify-center items-center w-5 h-5 -mr-1.5 bg-gray-600 rounded-full border-2 border-white cursor-pointer">
+                  class="flex justify-center items-center w-5 h-5 -mr-1.5 bg-gray-600 rounded-full border border-white cursor-pointer">
                   <svg x-show="color ==='gray'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                   </svg>
                 </div>
                 <div @click="color = 'black'" :class="color=== 'black'? 'ring-2 ring-black' :''"
-                  class="flex justify-center items-center w-5 h-5 -mr-1.5 bg-black rounded-full border-2 border-white cursor-pointer">
+                  class="flex justify-center items-center w-5 h-5 -mr-1.5 bg-black rounded-full border border-white cursor-pointer">
                   <svg x-show="color ==='black'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
