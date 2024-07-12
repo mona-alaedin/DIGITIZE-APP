@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/build/output.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <title>Single Product Page</title>
+</head>
+
+<body class="bg-slate-100">
+  <!-- APP BAR -->
+  <div class="flex md:hidden justify-between items-center mt-10 px-4 mb-6">
+    <div class="h-9 w-9 bg-white shadow-sm rounded flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+
+
+    </div>
+    <div class="text-sm sm:text-md font-bold text-slate-800">گوشی آیفون 13-128 گیگابایت</div>
+    <div class="h-9 w-9 bg-white shadow-sm rounded flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6 stroke-slate-800">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+    </div>
+  </div>
+  <!-- BreadCrumbs -->
+  <div class="flex gap-x-1 px-4 text-xs">
+    <div class="flex items-center">
+      <span class="text-orange-500">تلفن همراه</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+        <path fill-rule="evenodd"
+          d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="flex items-center">
+      <span class="text-orange-500">برند آیفون</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+        <path fill-rule="evenodd"
+          d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="flex items-center">
+      <span class="text-slate-600">آیفون 13</span>
+    </div>
+  </div>
+
+  <!-- Single Product -->
+  <div class="px-4 flex flex-col items-center gap-y-9">
+    <div class="w-4/5 max-w-xs">
+      <img class="w-full h-auto" src="/assets/images/Home/phone-1.png" alt="product-1">
+    </div>
+
+    <div class="w-full">
+      <div class="mb-8 text-center">
+        <h1 class="font-bold text-slate-800 mb-2">گوشی آیفون 13-128 گیگابایت</h1>
+        <h2 class="text-slate-700 text-sm">Apple Iphone 13-128 GB</h2>
+      </div>
+      <!-- color palette -->
+      <div class="flex justify-evenly items-center mb-4 w-full">
+        <span class="text-slate-800">انتخاب رنگ :</span>
+        <div x-data="{ color: 'black' }" class="flex justify-center items-center">
+
+          <div @click="color = 'yellow'" :class="color=== 'yellow'? 'ring-2 ring-yellow-600 order-last' :''"
+            class="flex justify-center items-center w-7 h-7 sm:h-8 sm:w-8 -mr-1.5 bg-yellow-500 rounded-full border border-white cursor-pointer">
+            <svg x-show="color ==='yellow'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div @click="color = 'red'" :class="color=== 'red'? 'ring-2 ring-red-700 order-last' :''"
+            class="flex justify-center items-center w-7 h-7 sm:h-8 sm:w-8 -mr-1.5 bg-red-600 rounded-full border border-white cursor-pointer">
+            <svg x-show="color ==='red'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div @click="color = 'blue'" :class="color=== 'blue'? 'ring-2 ring-sky-600 order-last' :''"
+            class="flex justify-center items-center w-7 h-7 sm:h-8 sm:w-8 -mr-1.5 bg-sky-600 rounded-full border border-white cursor-pointer">
+            <svg x-show="color ==='blue'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div @click="color = 'gray'" :class="color=== 'gray'? 'ring-2 ring-gray-700 order-last' :''"
+            class="flex justify-center items-center w-7 h-7 sm:h-8 sm:w-8 -mr-1.5 bg-gray-600 rounded-full border border-white cursor-pointer">
+            <svg x-show="color ==='gray'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div @click="color = 'black'" :class="color=== 'black'? 'ring-2 ring-black order-last' :''"
+            class="flex justify-center items-center w-7 h-7 sm:h-8 sm:w-8 -mr-1.5 bg-black rounded-full border border-white cursor-pointer">
+            <svg x-show="color ==='black'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="size-3 stroke-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- seller detail -->
+      <div class="flex flex-wrap gap-x-1 gap-y-2 justify-between text-xs">
+        <div class="flex items-center">
+          <div class="flex items-center relative py-2">
+            <span class="bg-slate-300 rounded-full h-5 w-5 absolute top-1 -right-1 z-0">
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-5 z-10 stroke-slate-600">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+            </svg>
+            <p class="font-medium text-slate-800 mr-1">فروشنده :</p>
+          </div>
+          <span class="font-light text-slate-800 mr-1">دیجی تایز</span>
+        </div>
+        <div class="flex items-center">
+          <div class="flex items-center relative py-2">
+            <span class="bg-slate-300 rounded-full h-5 w-5 absolute top-1 -right-1 z-0">
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-5 z-10 stroke-slate-600">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+            <p class="font-medium text-slate-800 mr-1">گارانتی :</p>
+          </div>
+          <span class="font-light text-slate-800 mr-1">18ماه زرین خدمت</span>
+        </div>
+        <div class="flex items-center justify-center w-full">
+          <div class="flex items-center relative py-2">
+            <span class="bg-slate-300 rounded-full h-5 w-5 absolute top-1 -right-1 z-0">
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-5 z-10 stroke-slate-600">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+            </svg>
+            <p class="font-medium text-slate-800 mr-1">ارسال توسط :</p>
+          </div>
+          <span class="font-light text-slate-800 mr-1">انبار تهران</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
